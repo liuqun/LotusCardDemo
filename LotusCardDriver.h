@@ -1,4 +1,4 @@
-#ifndef __LOTUS_CARD_DRIVER_H__
+﻿#ifndef __LOTUS_CARD_DRIVER_H__
 #define __LOTUS_CARD_DRIVER_H__
 
 #if 1 //作为VC demo调用头文件 把0改为1

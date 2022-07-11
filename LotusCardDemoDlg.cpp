@@ -1,4 +1,4 @@
-// LotusCardDemoDlg.cpp : ÊµÏÖÎÄ¼ş
+// LotusCardDemoDlg.cpp : å®ç°æ–‡ä»¶
 //
 
 #include "stdafx.h"
@@ -19,20 +19,20 @@ CLotusCardDemoDlg * m_pLotusCardDemoDlg = NULL;
 	return TRUE;
 }
 
-// ÓÃÓÚÓ¦ÓÃ³ÌĞò¡°¹ØÓÚ¡±²Ëµ¥ÏîµÄ CAboutDlg ¶Ô»°¿ò
+// ç”¨äºåº”ç”¨ç¨‹åºâ€œå…³äºâ€èœå•é¡¹çš„ CAboutDlg å¯¹è¯æ¡†
 
 class CAboutDlg : public CDialog
 {
 public:
 	CAboutDlg();
 
-// ¶Ô»°¿òÊı¾İ
+// å¯¹è¯æ¡†æ•°æ®
 	enum { IDD = IDD_ABOUTBOX };
 
 	protected:
-	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV Ö§³Ö
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV æ”¯æŒ
 
-// ÊµÏÖ
+// å®ç°
 protected:
 	DECLARE_MESSAGE_MAP()
 };
@@ -50,7 +50,7 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CLotusCardDemoDlg ¶Ô»°¿ò
+// CLotusCardDemoDlg å¯¹è¯æ¡†
 
 
 
@@ -91,15 +91,15 @@ BEGIN_MESSAGE_MAP(CLotusCardDemoDlg, CDialog)
 END_MESSAGE_MAP()
 
 
-// CLotusCardDemoDlg ÏûÏ¢´¦Àí³ÌĞò
+// CLotusCardDemoDlg æ¶ˆæ¯å¤„ç†ç¨‹åº
 
 BOOL CLotusCardDemoDlg::OnInitDialog()
 {
 	CDialog::OnInitDialog();
 
-	// ½«\¡°¹ØÓÚ...\¡±²Ëµ¥ÏîÌí¼Óµ½ÏµÍ³²Ëµ¥ÖĞ¡£
+	// å°†\â€œå…³äº...\â€èœå•é¡¹æ·»åŠ åˆ°ç³»ç»Ÿèœå•ä¸­ã€‚
 
-	// IDM_ABOUTBOX ±ØĞëÔÚÏµÍ³ÃüÁî·¶Î§ÄÚ¡£
+	// IDM_ABOUTBOX å¿…é¡»åœ¨ç³»ç»Ÿå‘½ä»¤èŒƒå›´å†…ã€‚
 	ASSERT((IDM_ABOUTBOX & 0xFFF0) == IDM_ABOUTBOX);
 	ASSERT(IDM_ABOUTBOX < 0xF000);
 
@@ -115,15 +115,15 @@ BOOL CLotusCardDemoDlg::OnInitDialog()
 		}
 	}
 
-	// ÉèÖÃ´Ë¶Ô»°¿òµÄÍ¼±ê¡£µ±Ó¦ÓÃ³ÌĞòÖ÷´°¿Ú²»ÊÇ¶Ô»°¿òÊ±£¬¿ò¼Ü½«×Ô¶¯
-	//  Ö´ĞĞ´Ë²Ù×÷
-	SetIcon(m_hIcon, TRUE);			// ÉèÖÃ´óÍ¼±ê
-	SetIcon(m_hIcon, FALSE);		// ÉèÖÃĞ¡Í¼±ê
+	// è®¾ç½®æ­¤å¯¹è¯æ¡†çš„å›¾æ ‡ã€‚å½“åº”ç”¨ç¨‹åºä¸»çª—å£ä¸æ˜¯å¯¹è¯æ¡†æ—¶ï¼Œæ¡†æ¶å°†è‡ªåŠ¨
+	//  æ‰§è¡Œæ­¤æ“ä½œ
+	SetIcon(m_hIcon, TRUE);			// è®¾ç½®å¤§å›¾æ ‡
+	SetIcon(m_hIcon, FALSE);		// è®¾ç½®å°å›¾æ ‡
 
-	// TODO: ÔÚ´ËÌí¼Ó¶îÍâµÄ³õÊ¼»¯´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ é¢å¤–çš„åˆå§‹åŒ–ä»£ç 
 	m_edtWifiIpAdrress.SetWindowText(_T("192.168.6.6"));
 	m_ucWriteIndex = 0;
-	return TRUE;  // ³ı·ÇÉèÖÃÁË¿Ø¼şµÄ½¹µã£¬·ñÔò·µ»Ø TRUE
+	return TRUE;  // é™¤éè®¾ç½®äº†æ§ä»¶çš„ç„¦ç‚¹ï¼Œå¦åˆ™è¿”å› TRUE
 }
 
 void CLotusCardDemoDlg::OnSysCommand(UINT nID, LPARAM lParam)
@@ -139,19 +139,19 @@ void CLotusCardDemoDlg::OnSysCommand(UINT nID, LPARAM lParam)
 	}
 }
 
-// Èç¹ûÏò¶Ô»°¿òÌí¼Ó×îĞ¡»¯°´Å¥£¬ÔòĞèÒªÏÂÃæµÄ´úÂë
-//  À´»æÖÆ¸ÃÍ¼±ê¡£¶ÔÓÚÊ¹ÓÃÎÄµµ/ÊÓÍ¼Ä£ĞÍµÄ MFC Ó¦ÓÃ³ÌĞò£¬
-//  Õâ½«ÓÉ¿ò¼Ü×Ô¶¯Íê³É¡£
+// å¦‚æœå‘å¯¹è¯æ¡†æ·»åŠ æœ€å°åŒ–æŒ‰é’®ï¼Œåˆ™éœ€è¦ä¸‹é¢çš„ä»£ç 
+//  æ¥ç»˜åˆ¶è¯¥å›¾æ ‡ã€‚å¯¹äºä½¿ç”¨æ–‡æ¡£/è§†å›¾æ¨¡å‹çš„ MFC åº”ç”¨ç¨‹åºï¼Œ
+//  è¿™å°†ç”±æ¡†æ¶è‡ªåŠ¨å®Œæˆã€‚
 
 void CLotusCardDemoDlg::OnPaint() 
 {
 	if (IsIconic())
 	{
-		CPaintDC dc(this); // ÓÃÓÚ»æÖÆµÄÉè±¸ÉÏÏÂÎÄ
+		CPaintDC dc(this); // ç”¨äºç»˜åˆ¶çš„è®¾å¤‡ä¸Šä¸‹æ–‡
 
 		SendMessage(WM_ICONERASEBKGND, reinterpret_cast<WPARAM>(dc.GetSafeHdc()), 0);
 
-		// Ê¹Í¼±êÔÚ¹¤×÷¾ØĞÎÖĞ¾ÓÖĞ
+		// ä½¿å›¾æ ‡åœ¨å·¥ä½œçŸ©å½¢ä¸­å±…ä¸­
 		int cxIcon = GetSystemMetrics(SM_CXICON);
 		int cyIcon = GetSystemMetrics(SM_CYICON);
 		CRect rect;
@@ -159,7 +159,7 @@ void CLotusCardDemoDlg::OnPaint()
 		int x = (rect.Width() - cxIcon + 1) / 2;
 		int y = (rect.Height() - cyIcon + 1) / 2;
 
-		// »æÖÆÍ¼±ê
+		// ç»˜åˆ¶å›¾æ ‡
 		dc.DrawIcon(x, y, m_hIcon);
 	}
 	else
@@ -168,7 +168,7 @@ void CLotusCardDemoDlg::OnPaint()
 	}
 }
 
-//µ±ÓÃ»§ÍÏ¶¯×îĞ¡»¯´°¿ÚÊ±ÏµÍ³µ÷ÓÃ´Ëº¯ÊıÈ¡µÃ¹â±êÏÔÊ¾¡£
+//å½“ç”¨æˆ·æ‹–åŠ¨æœ€å°åŒ–çª—å£æ—¶ç³»ç»Ÿè°ƒç”¨æ­¤å‡½æ•°å–å¾—å…‰æ ‡æ˜¾ç¤ºã€‚
 HCURSOR CLotusCardDemoDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
@@ -176,7 +176,7 @@ HCURSOR CLotusCardDemoDlg::OnQueryDragIcon()
 
 void CLotusCardDemoDlg::OnBnClickedOk()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	//OnOK();
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
@@ -200,7 +200,7 @@ void CLotusCardDemoDlg::TestIcCard(int hLotusCard)
 	if(FALSE == bResult) return;
 	int nRequestType = RT_NOT_HALT;
 
-      //»ñÈ¡¿¨ºÅ Í¬Ö´ĞĞLotusCardRequest/LotusCardAnticoll/LotusCardSelectÈı¸öº¯Êı
+      //è·å–å¡å· åŒæ‰§è¡ŒLotusCardRequest/LotusCardAnticoll/LotusCardSelectä¸‰ä¸ªå‡½æ•°
       memset(&sttLotusCardParam, 0x00, sizeof(sttLotusCardParam));
       bResult = LotusCardGetCardNo(hLotusCard,nRequestType, &sttLotusCardParam);
       if(FALSE == bResult) 
@@ -212,7 +212,7 @@ void CLotusCardDemoDlg::TestIcCard(int hLotusCard)
 	  memcpy(&nCardNo, sttLotusCardParam.arrCardNo, 4);
 	  strLog.Format(_T("CardNo 0x%.8x"), nCardNo);
 	  AddLog(strLog);
-      //×°ÔØÃÜÂëA
+      //è£…è½½å¯†ç A
       memset(&sttLotusCardParam.arrKeys, 0x00, sizeof(sttLotusCardParam.arrKeys));
       sttLotusCardParam.arrKeys[0]=0xff;
       sttLotusCardParam.arrKeys[1]=0xff;
@@ -231,7 +231,7 @@ void CLotusCardDemoDlg::TestIcCard(int hLotusCard)
       strLog.Format(_T("LotusCardLoadKey  Exec Success"));
       AddLog(strLog);
 
-      //ÑéÖ¤ÃÜÂë
+      //éªŒè¯å¯†ç 
       bResult =LotusCardAuthentication(hLotusCard, AM_A, 0, &sttLotusCardParam);
       if(FALSE == bResult) 
 	  {
@@ -243,7 +243,7 @@ void CLotusCardDemoDlg::TestIcCard(int hLotusCard)
       AddLog(strLog);
 
       
-      //¶Á
+      //è¯»
       bResult=LotusCardRead(hLotusCard, 2, &sttLotusCardParam);
       if(FALSE == bResult) 
 	  {
@@ -262,7 +262,7 @@ void CLotusCardDemoDlg::TestIcCard(int hLotusCard)
       AddLog(strLog);
 
 
-      //Ğ´
+      //å†™
       memset(&sttLotusCardParam.arrBuffer, 0x00, sizeof(sttLotusCardParam.arrBuffer));
       sttLotusCardParam.arrBuffer[0] = 0x00;
       sttLotusCardParam.arrBuffer[1] = 0x01;
@@ -293,18 +293,18 @@ void CLotusCardDemoDlg::TestIcCard(int hLotusCard)
 
       bResult = LotusCardInitValue(hLotusCard, 1, 10);
 	  if(FALSE == bResult) return;
-      strLog.Format(_T("LotusCardInitValue Exec Success£¡"));      
+      strLog.Format(_T("LotusCardInitValue Exec Successï¼"));      
 	  AddLog(strLog);
 
-      //¼õÖµ
+      //å‡å€¼
       bResult=LotusCardDecrement(hLotusCard, 1, 1);
       if(FALSE == bResult) return;
-      strLog.Format(_T("LotusCardDecrement Exec Success £¡"));
+      strLog.Format(_T("LotusCardDecrement Exec Success ï¼"));
 	  AddLog(strLog);
-      //ÖĞÖ¹
+      //ä¸­æ­¢
       bResult=LotusCardHalt(hLotusCard);
 	  if(FALSE == bResult) return;
-	  strLog.Format(_T("LotusCardHalt Exec Success£¡"));
+	  strLog.Format(_T("LotusCardHalt Exec Successï¼"));
 	  AddLog(strLog);
 }
 void CLotusCardDemoDlg::AddLog(CString strLog)
@@ -320,7 +320,7 @@ void CLotusCardDemoDlg::AddLog(CString strLog)
 }
 void CLotusCardDemoDlg::OnBnClickedClearlog()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	m_lstLog.ResetContent();
 #if 0
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
@@ -345,7 +345,7 @@ void CLotusCardDemoDlg::OnBnClickedClearlog()
 
 void CLotusCardDemoDlg::OnBnClickedTesteasyapi()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString strWifiIpAddress;
 	CString strTmp;
 	int  hLotusCard = -1;
@@ -387,16 +387,16 @@ void CLotusCardDemoDlg::TestEasyApi(int hLotusCard)
 	bResult = LotusCardReadData(hLotusCard, nRequestType, 5, 1,0,0, &sttLotusCardParam);
 	if(FALSE == bResult)
 	{
-		AddLog(_T("µ÷ÓÃ LotusCardReadData Ê§°Ü!"));
+		AddLog(_T("è°ƒç”¨ LotusCardReadData å¤±è´¥!"));
 		return;
 	}
-	AddLog(_T("µ÷ÓÃ LotusCardReadData ³É¹¦!"));
+	AddLog(_T("è°ƒç”¨ LotusCardReadData æˆåŠŸ!"));
 	memcpy(&nCardNo, sttLotusCardParam.arrCardNo, 4);
-	strTmp.Format(_T("¿¨ºÅ£º%8X"), nCardNo);
+	strTmp.Format(_T("å¡å·ï¼š%8X"), nCardNo);
 	AddLog(strTmp);
-	strTmp.Format(_T("¿¨ºÅ£º%u"), nCardNo);
+	strTmp.Format(_T("å¡å·ï¼š%u"), nCardNo);
 	AddLog(strTmp);
-	strLog = _T("¶ÁÈ¡¿é5Êı¾İ£º");
+	strLog = _T("è¯»å–å—5æ•°æ®ï¼š");
 
 	for (nCyc = 0;  nCyc < 15; nCyc++)
 	{
@@ -427,12 +427,12 @@ void CLotusCardDemoDlg::TestEasyApi(int hLotusCard)
 	bResult = LotusCardWriteData(hLotusCard, 5,10,0, &sttLotusCardParam);
 	if(FALSE == bResult)
 	{
-		AddLog(_T("µ÷ÓÃLotusCardWriteDataÊ§°Ü!"));
+		AddLog(_T("è°ƒç”¨LotusCardWriteDataå¤±è´¥!"));
 		return;
 	}
 	else
 	{
-		AddLog(_T("µ÷ÓÃLotusCardWriteData³É¹¦!"));
+		AddLog(_T("è°ƒç”¨LotusCardWriteDataæˆåŠŸ!"));
 	}
         
 
@@ -441,7 +441,7 @@ void CLotusCardDemoDlg::TestEasyApi(int hLotusCard)
 
 void CLotusCardDemoDlg::OnBnClickedGetcardnoex()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString strWifiIpAddress;
 	CString strTmp;
 	int  hLotusCard = -1;
@@ -460,7 +460,7 @@ void CLotusCardDemoDlg::OnBnClickedGetcardnoex()
 
 void CLotusCardDemoDlg::OnBnClickedTestconnect()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString strWifiIpAddress;
 	CString strTmp;
 	int  hLotusCard = -1;
@@ -468,12 +468,12 @@ void CLotusCardDemoDlg::OnBnClickedTestconnect()
 	m_edtWifiIpAdrress.GetWindowText(strWifiIpAddress);
 	if(LotusCardConnectTest(strWifiIpAddress.GetBuffer(),200000))
 	{
-		strLog.Format(_T("Á¬½ÓIP %s ³É¹¦"),strWifiIpAddress);
+		strLog.Format(_T("è¿æ¥IP %s æˆåŠŸ"),strWifiIpAddress);
 		AddLog(strLog);
 	}
 	else
 	{
-		strLog.Format(_T("Á¬½ÓIP %s Ê§°Ü"),strWifiIpAddress);
+		strLog.Format(_T("è¿æ¥IP %s å¤±è´¥"),strWifiIpAddress);
 		AddLog(strLog);
 		return;
 	}
@@ -503,20 +503,20 @@ void CLotusCardDemoDlg::TestGetCardNoEx(int hLotusCard)
 	bResult = LotusCardGetCardNoEx(hLotusCard, nRequestType,10,0,0, &sttLotusCardParam);
 	if(FALSE == bResult)
 	{
-		AddLog(_T("µ÷ÓÃ LotusCardGetCardNoEx Ê§°Ü!"));
+		AddLog(_T("è°ƒç”¨ LotusCardGetCardNoEx å¤±è´¥!"));
 		return;
 	}
-	AddLog(_T("µ÷ÓÃ LotusCardGetCardNoEx ³É¹¦!"));
+	AddLog(_T("è°ƒç”¨ LotusCardGetCardNoEx æˆåŠŸ!"));
 	memcpy(&nCardNo, sttLotusCardParam.arrCardNo, 4);
-	strTmp.Format(_T("¿¨ºÅ£º%8X"), nCardNo);
+	strTmp.Format(_T("å¡å·ï¼š%8X"), nCardNo);
 	AddLog(strTmp);
-	strTmp.Format(_T("¿¨ºÅ£º%u"), nCardNo);
+	strTmp.Format(_T("å¡å·ï¼š%u"), nCardNo);
 	AddLog(strTmp);
 
 }
 void CLotusCardDemoDlg::OnBnClickedGetbankcardno()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
 	if(-1 != hLotusCard)
@@ -543,17 +543,17 @@ void CLotusCardDemoDlg::TestGetBankCardNo(int hLotusCard)
 	bResult = LotusCardBeep(hLotusCard,10);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardBeep Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardBeep æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
 
-	//»ñÈ¡¿¨ºÅ Í¬Ö´ĞĞLotusCardRequest/LotusCardAnticoll/LotusCardSelectÈı¸öº¯Êı
+	//è·å–å¡å· åŒæ‰§è¡ŒLotusCardRequest/LotusCardAnticoll/LotusCardSelectä¸‰ä¸ªå‡½æ•°
 	memset(&sttLotusCardParam, 0x00, sizeof(sttLotusCardParam));
 	bResult = LotusCardResetCpuCard(hLotusCard,&sttLotusCardParam);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardResetCpuCard Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardResetCpuCard æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
@@ -567,7 +567,7 @@ void CLotusCardDemoDlg::TestGetBankCardNo(int hLotusCard)
 	bResult = LotusCardGetBankCardNo(hLotusCard,szBankCardNo, sizeof(szBankCardNo));
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardGetBankCardNo Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardGetBankCardNo æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
@@ -578,7 +578,7 @@ void CLotusCardDemoDlg::TestGetBankCardNo(int hLotusCard)
 }
 void CLotusCardDemoDlg::OnBnClickedGettwogenerationidcardno()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString strWifiIpAddress;
 	m_edtWifiIpAdrress.GetWindowText(strWifiIpAddress);
 	int  hLotusCard = LotusCardOpenDevice(strWifiIpAddress.GetBuffer(),0,0,0,0,NULL);
@@ -605,7 +605,7 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdCardNo(int hLotusCard)
 	bResult = LotusCardBeep(hLotusCard,10);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardBeep Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardBeep æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
@@ -613,14 +613,14 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdCardNo(int hLotusCard)
 	bResult = LotusCardSetCardType(hLotusCard, 'B');
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetCardType Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetCardType æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
 	bResult = LotusCardGetTwoGenerationIDCardNo(hLotusCard,szTwoGenerationIdCardNo,sizeof(szTwoGenerationIdCardNo));
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardGetTwoGenerationIDCardNo Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardGetTwoGenerationIDCardNo æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
@@ -646,7 +646,7 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfo(int hLotusCard)
 	bResult = LotusCardBeep(hLotusCard,10);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardBeep Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardBeep æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
@@ -654,14 +654,14 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfo(int hLotusCard)
 	bResult = LotusCardSetCardType(hLotusCard, 'B');
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetCardType Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetCardType æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
 	bResult = LotusCardGetTwoGenerationIDCardNo(hLotusCard,szTwoGenerationIdCardNo,sizeof(szTwoGenerationIdCardNo));
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardGetTwoGenerationIDCardNo Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardGetTwoGenerationIDCardNo æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
@@ -671,17 +671,17 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfo(int hLotusCard)
 	bResult = LotusCardGetTwoIdInfoByServerEx(hLotusCard, "219.153.15.85", 10000, &sttTwoIdInfo, 15);
 	if(FALSE == bResult) 
 	{
-		//strLog.Format(_T("LotusCardGetTwoIdInfo Ö´ĞĞÊ§°Ü"));
-		strLog.Format(_T("¡¡LotusCardGetTwoIdInfoByServerEx Ö´ĞĞÊ§°Ü"));
+		//strLog.Format(_T("LotusCardGetTwoIdInfo æ‰§è¡Œå¤±è´¥"));
+		strLog.Format(_T("ã€€LotusCardGetTwoIdInfoByServerEx æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
-		strLog.Format(_T("¡¡ÎŞ·¨Á¬½Óµ½ SAMV °²È«Ä£¿é·şÎñÆ÷£¨IPµØÖ·:%s£©"), "219.153.15.85");
+		strLog.Format(_T("ã€€æ— æ³•è¿æ¥åˆ° SAMV å®‰å…¨æ¨¡å—æœåŠ¡å™¨ï¼ˆIPåœ°å€:%sï¼‰"), "219.153.15.85");
 		AddLog(strLog);
 		return;
 	}
 	USES_CONVERSION;
 	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdName, sizeof(sttTwoIdInfo.arrTwoIdName));
-	strLog.Format(_T("¡¡ĞÕÃû: %s"),  W2A(wstrTmp));
+	strLog.Format(_T("ã€€å§“å: %s"),  W2A(wstrTmp));
 	AddLog(strLog);
 
 	{
@@ -701,17 +701,17 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfo(int hLotusCard)
 		memcpy(&wstrValidityFromDate, &sttTwoIdInfo.arrTwoIdValidityPeriodBegin, sizeof(sttTwoIdInfo.arrTwoIdValidityPeriodBegin));
 		memcpy(&wstrValidityExpiryDate, &sttTwoIdInfo.arrTwoIdValidityPeriodEnd, sizeof(sttTwoIdInfo.arrTwoIdValidityPeriodEnd));
 
-		strLog.Format(_T("¡¡Éí·İÖ¤ºÅ£º%s"), W2A(wstrSN));
+		strLog.Format(_T("ã€€èº«ä»½è¯å·ï¼š%s"), W2A(wstrSN));
 		AddLog(strLog);
-		strLog.Format(_T("¡¡ĞÔ±ğ´úÂë£º%s£¨±¸×¢£ºÄĞ=1£¬Å®=2£©"), W2A(wstrSex));
+		strLog.Format(_T("ã€€æ€§åˆ«ä»£ç ï¼š%sï¼ˆå¤‡æ³¨ï¼šç”·=1ï¼Œå¥³=2ï¼‰"), W2A(wstrSex));
 		AddLog(strLog);
-		strLog.Format(_T("¡¡Ãñ×å´úÂë£º%s£¨±¸×¢£ººº×å=01£©"), W2A(wstrNationCode));
+		strLog.Format(_T("ã€€æ°‘æ—ä»£ç ï¼š%sï¼ˆå¤‡æ³¨ï¼šæ±‰æ—=01ï¼‰"), W2A(wstrNationCode));
 		AddLog(strLog);
-		strLog.Format(_T("¡¡×¡Ö·£º%s"), W2A(wstrAddress));
+		strLog.Format(_T("ã€€ä½å€ï¼š%s"), W2A(wstrAddress));
 		AddLog(strLog);
-		strLog.Format(_T("¡¡Ç©·¢»ú¹Ø£º%s"), W2A(wstrCA));
+		strLog.Format(_T("ã€€ç­¾å‘æœºå…³ï¼š%s"), W2A(wstrCA));
 		AddLog(strLog);
-		strLog.Format(_T("¡¡ÓĞĞ§ÆÚÏŞ£º%s - %s"), W2A(wstrValidityFromDate), W2A(wstrValidityExpiryDate));
+		strLog.Format(_T("ã€€æœ‰æ•ˆæœŸé™ï¼š%s - %s"), W2A(wstrValidityFromDate), W2A(wstrValidityExpiryDate));
 		AddLog(strLog);
 	}
 
@@ -720,12 +720,12 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfo(int hLotusCard)
 		bResult = LotusCardWlDecodeByServer(hLotusCard, "wl1.highwillow.cn", &sttTwoIdInfo);
 		if (FALSE == bResult)
 		{
-			strLog.Format(_T("LotusCardWlDecodeByServer Ö´ĞĞÊ§°Ü"));
+			strLog.Format(_T("LotusCardWlDecodeByServer æ‰§è¡Œå¤±è´¥"));
 			AddLog(strLog);
 			return;
 		}
 
-		strLog.Format(_T("LotusCardWlDecodeByServer Ö´ĞĞ³É¹¦"));
+		strLog.Format(_T("LotusCardWlDecodeByServer æ‰§è¡ŒæˆåŠŸ"));
 		AddLog(strLog);
 	}
 	if (sttTwoIdInfo.unTwoIdPhotoJpegLength > 0)
@@ -735,31 +735,31 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfo(int hLotusCard)
 		//fJpeg.Close();
 		CoInitialize(NULL);
 		HGLOBAL hImageMemory = GlobalAlloc(GMEM_MOVEABLE, sttTwoIdInfo.unTwoIdPhotoJpegLength);
-		IStream* pIStream;//´´½¨Ò»¸öIStream½Ó¿ÚÖ¸Õë£¬ÓÃÀ´±£´æÍ¼Æ¬Á÷
-		IPicture* pIPicture;//´´½¨Ò»¸öIPicture½Ó¿ÚÖ¸Õë£¬±íÊ¾Í¼Æ¬¶ÔÏó
-		CreateStreamOnHGlobal(hImageMemory, false, &pIStream); //ÓÃÈ«¾ÖÄÚ´æ³õÊ¹»¯IStream½Ó¿ÚÖ¸Õë
+		IStream* pIStream;//åˆ›å»ºä¸€ä¸ªIStreamæ¥å£æŒ‡é’ˆï¼Œç”¨æ¥ä¿å­˜å›¾ç‰‡æµ
+		IPicture* pIPicture;//åˆ›å»ºä¸€ä¸ªIPictureæ¥å£æŒ‡é’ˆï¼Œè¡¨ç¤ºå›¾ç‰‡å¯¹è±¡
+		CreateStreamOnHGlobal(hImageMemory, false, &pIStream); //ç”¨å…¨å±€å†…å­˜åˆä½¿åŒ–IStreamæ¥å£æŒ‡é’ˆ
 
-		void* pImageMemory = GlobalLock(hImageMemory); //Ëø¶¨ÄÚ´æ
+		void* pImageMemory = GlobalLock(hImageMemory); //é”å®šå†…å­˜
 		memcpy(pImageMemory, sttTwoIdInfo.arrTwoIdPhotoJpeg, sttTwoIdInfo.unTwoIdPhotoJpegLength);
-		GlobalUnlock(hImageMemory); //½âËøÄÚ´æ
+		GlobalUnlock(hImageMemory); //è§£é”å†…å­˜
 
-		OleLoadPicture(pIStream, 0, false, IID_IPicture, (LPVOID*)&(pIPicture));//ÓÃOleLoadPicture»ñµÃIPicture½Ó¿ÚÖ¸Õë
-		//µÃµ½IPicture COM½Ó¿Ú¶ÔÏóºó£¬Äã¾Í¿ÉÒÔ½øĞĞ»ñµÃÍ¼Æ¬ĞÅÏ¢¡¢ÏÔÊ¾Í¼Æ¬µÈ²Ù×÷
+		OleLoadPicture(pIStream, 0, false, IID_IPicture, (LPVOID*)&(pIPicture));//ç”¨OleLoadPictureè·å¾—IPictureæ¥å£æŒ‡é’ˆ
+		//å¾—åˆ°IPicture COMæ¥å£å¯¹è±¡åï¼Œä½ å°±å¯ä»¥è¿›è¡Œè·å¾—å›¾ç‰‡ä¿¡æ¯ã€æ˜¾ç¤ºå›¾ç‰‡ç­‰æ“ä½œ
 		OLE_XSIZE_HIMETRIC hmWidth;
 		OLE_YSIZE_HIMETRIC hmHeight;
-		pIPicture->get_Width(&hmWidth);//ÓÃ½Ó¿Ú·½·¨»ñµÃÍ¼Æ¬µÄ¿íºÍ¸ß
+		pIPicture->get_Width(&hmWidth);//ç”¨æ¥å£æ–¹æ³•è·å¾—å›¾ç‰‡çš„å®½å’Œé«˜
 		pIPicture->get_Height(&hmHeight);
 
-		pIPicture->Render(m_Image.GetWindowDC()->GetSafeHdc(), 0, 0, 80, 80, 0, hmHeight, hmWidth, -hmHeight, NULL);//ÔÚÖ¸¶¨µÄDCÉÏ»æ³öÍ¼Æ¬
+		pIPicture->Render(m_Image.GetWindowDC()->GetSafeHdc(), 0, 0, 80, 80, 0, hmHeight, hmWidth, -hmHeight, NULL);//åœ¨æŒ‡å®šçš„DCä¸Šç»˜å‡ºå›¾ç‰‡
 
-		GlobalFree(hImageMemory); //ÊÍ·ÅÈ«¾ÖÄÚ´æ
-		pIStream->Release(); //ÊÍ·ÅpIStream
-		pIPicture->Release(); //ÊÍ·ÅpIPicture
+		GlobalFree(hImageMemory); //é‡Šæ”¾å…¨å±€å†…å­˜
+		pIStream->Release(); //é‡Šæ”¾pIStream
+		pIPicture->Release(); //é‡Šæ”¾pIPicture
 	}
 }
 void CLotusCardDemoDlg::OnBnClickedGettwogenerationidinfo()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	CString strWifiIpAddress;
 	m_edtWifiIpAdrress.GetWindowText(strWifiIpAddress);
 	int  hLotusCard = LotusCardOpenDevice(strWifiIpAddress.GetBuffer(), 0, 0, 0, 0, NULL);
@@ -774,7 +774,7 @@ void CLotusCardDemoDlg::OnBnClickedGettwogenerationidinfo()
 
 void CLotusCardDemoDlg::OnBnClickedGettwogenerationidinfobyserver()
 {
-	//// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	//// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	//int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
 	//if(-1 != hLotusCard)
@@ -810,7 +810,7 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 //	bResult = LotusCardBeep(hLotusCard,10);
 //	if(FALSE == bResult) 
 //	{
-//		strLog.Format(_T("LotusCardBeep Ö´ĞĞÊ§°Ü"));
+//		strLog.Format(_T("LotusCardBeep æ‰§è¡Œå¤±è´¥"));
 //		AddLog(strLog);
 //		return;
 //	}
@@ -818,14 +818,14 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 //	bResult = LotusCardSetCardType(hLotusCard, 'B');
 //	if(FALSE == bResult) 
 //	{
-//		strLog.Format(_T("LotusCardSetCardType Ö´ĞĞÊ§°Ü"));
+//		strLog.Format(_T("LotusCardSetCardType æ‰§è¡Œå¤±è´¥"));
 //		AddLog(strLog);
 //		return;
 //	}
 //	bResult = LotusCardGetTwoGenerationIDCardNo(hLotusCard,szTwoGenerationIdCardNo,sizeof(szTwoGenerationIdCardNo));
 //	if(FALSE == bResult) 
 //	{
-//		strLog.Format(_T("LotusCardGetTwoGenerationIDCardNo Ö´ĞĞÊ§°Ü"));
+//		strLog.Format(_T("LotusCardGetTwoGenerationIDCardNo æ‰§è¡Œå¤±è´¥"));
 //		AddLog(strLog);
 //		return;
 //	}
@@ -838,14 +838,14 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 //	{
 //		nErrorCode = LotusCardGetTwoIdErrorCode(hLotusCard);
 //		LotusCardGetTwoIdErrorInfo(hLotusCard, (TwoIdErrorCode)nErrorCode,szErrorInfo, sizeof(szErrorInfo));
-//		strLog.Format(_T("LotusCardGetTwoIdInfoByMcuServer Ö´ĞĞÊ§°Ü, ´íÎóÂë %d "), nErrorCode);
+//		strLog.Format(_T("LotusCardGetTwoIdInfoByMcuServer æ‰§è¡Œå¤±è´¥, é”™è¯¯ç  %d "), nErrorCode);
 //		AddLog(strLog);
-//		strLog.Format(_T("          ´íÎóÃèÊö %s"),szErrorInfo);
+//		strLog.Format(_T("          é”™è¯¯æè¿° %s"),szErrorInfo);
 //		AddLog(strLog);
 //		if(TIEC_GET_SAMV_IP_PORT==nErrorCode)
 //		{
 //			LotusCardGetTwoIdDispatchServerErrorInfo(hLotusCard, szErrorInfo,sizeof(szErrorInfo));
-//			strLog.Format(_T("          µ÷¶È´íÎóÃèÊö %s"),szErrorInfo);
+//			strLog.Format(_T("          è°ƒåº¦é”™è¯¯æè¿° %s"),szErrorInfo);
 //			AddLog(strLog);
 //		}
 //
@@ -854,34 +854,34 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 //	USES_CONVERSION;
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdName, sizeof(sttTwoIdInfo.arrTwoIdName));
-//	strLog.Format(_T("ĞÕÃû %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("å§“å %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdAddress, sizeof(sttTwoIdInfo.arrTwoIdAddress));
-//	strLog.Format(_T("µØÖ· %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("åœ°å€ %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdBirthday, sizeof(sttTwoIdInfo.arrTwoIdBirthday));
-//	strLog.Format(_T("ÉúÈÕ %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("ç”Ÿæ—¥ %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdNo, sizeof(sttTwoIdInfo.arrTwoIdNo));
-//	strLog.Format(_T("ºÅÂë %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("å·ç  %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdSignedDepartment, sizeof(sttTwoIdInfo.arrTwoIdSignedDepartment));
-//	strLog.Format(_T("Ç©·¢»ú¹Ø %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("ç­¾å‘æœºå…³ %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdValidityPeriodBegin, sizeof(sttTwoIdInfo.arrTwoIdValidityPeriodBegin));
-//	strLog.Format(_T("ÓĞĞ§ÆÚ¿ªÊ¼ %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("æœ‰æ•ˆæœŸå¼€å§‹ %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
 //	memcpy(&wstrTmp, &sttTwoIdInfo.arrTwoIdValidityPeriodEnd, sizeof(sttTwoIdInfo.arrTwoIdValidityPeriodEnd));
-//	strLog.Format(_T("ÓĞĞ§ÆÚ½áÊø %s"),  W2A(wstrTmp));
+//	strLog.Format(_T("æœ‰æ•ˆæœŸç»“æŸ %s"),  W2A(wstrTmp));
 //	AddLog(strLog);
 //
 //	memset(&wstrTmp, 0x00, sizeof(wstrTmp));
@@ -889,14 +889,14 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 //	strLog.Format(_T("%s"),  W2A(wstrTmp));
 //	if(_T("1") == strLog)
 //	{
-//		strLog.Format(_T("ĞÔ±ğ ÄĞ"));
+//		strLog.Format(_T("æ€§åˆ« ç”·"));
 //	}
 //	else if(_T("2") == strLog)
 //	{
-//		strLog.Format(_T("ĞÔ±ğ ÄĞ"));
+//		strLog.Format(_T("æ€§åˆ« ç”·"));
 //	}
 //	else {
-//		strLog.Format(_T("ĞÔ±ğ Î´Öª"));
+//		strLog.Format(_T("æ€§åˆ« æœªçŸ¥"));
 //	}
 //	AddLog(strLog);
 //
@@ -906,14 +906,14 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 //	strLog.Format(_T("%s"),  W2A(wstrTmp));
 //	if(_T("01") == strLog)
 //	{
-//		strLog.Format(_T("Ãñ×å ºº"));
+//		strLog.Format(_T("æ°‘æ— æ±‰"));
 //	}
 //	else if(_T("02") == strLog)
 //	{
-//		strLog.Format(_T("Ãñ×å ÃÉ¹Å"));
+//		strLog.Format(_T("æ°‘æ— è’™å¤"));
 //	}
 //	else {
-//		strLog.Format(_T("Ãñ×å Î´Öª"));
+//		strLog.Format(_T("æ°‘æ— æœªçŸ¥"));
 //	}
 //	AddLog(strLog);
 	//if( sttTwoIdInfo.unTwoIdPhotoJpegLength==0)
@@ -921,12 +921,12 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 	//	bResult = LotusCardWlDecodeByServer(hLotusCard,"wl1.highwillow.cn",&sttTwoIdInfo);
 	//	if(FALSE == bResult) 
 	//	{
-	//		strLog.Format(_T("LotusCardWlDecodeByServer Ö´ĞĞÊ§°Ü"));
+	//		strLog.Format(_T("LotusCardWlDecodeByServer æ‰§è¡Œå¤±è´¥"));
 	//		AddLog(strLog);
 	//		return;
 	//	}
 
-	//	strLog.Format(_T("LotusCardWlDecodeByServer Ö´ĞĞ³É¹¦"));
+	//	strLog.Format(_T("LotusCardWlDecodeByServer æ‰§è¡ŒæˆåŠŸ"));
 	//	AddLog(strLog);
 	//}
 	//if( sttTwoIdInfo.unTwoIdPhotoJpegLength>0)
@@ -936,31 +936,31 @@ void CLotusCardDemoDlg::TestGetTwoGenerationIdInfoByServer(long hLotusCard)
 	//	//fJpeg.Close();
 	//	CoInitialize(NULL);
 	//	HGLOBAL hImageMemory=GlobalAlloc(GMEM_MOVEABLE, sttTwoIdInfo.unTwoIdPhotoJpegLength);
-	//	IStream *pIStream;//´´½¨Ò»¸öIStream½Ó¿ÚÖ¸Õë£¬ÓÃÀ´±£´æÍ¼Æ¬Á÷
- //       IPicture *pIPicture;//´´½¨Ò»¸öIPicture½Ó¿ÚÖ¸Õë£¬±íÊ¾Í¼Æ¬¶ÔÏó
- //       CreateStreamOnHGlobal(hImageMemory, false,&pIStream); //ÓÃÈ«¾ÖÄÚ´æ³õÊ¹»¯IStream½Ó¿ÚÖ¸Õë
+	//	IStream *pIStream;//åˆ›å»ºä¸€ä¸ªIStreamæ¥å£æŒ‡é’ˆï¼Œç”¨æ¥ä¿å­˜å›¾ç‰‡æµ
+ //       IPicture *pIPicture;//åˆ›å»ºä¸€ä¸ªIPictureæ¥å£æŒ‡é’ˆï¼Œè¡¨ç¤ºå›¾ç‰‡å¯¹è±¡
+ //       CreateStreamOnHGlobal(hImageMemory, false,&pIStream); //ç”¨å…¨å±€å†…å­˜åˆä½¿åŒ–IStreamæ¥å£æŒ‡é’ˆ
 
-	//	void *pImageMemory=GlobalLock(hImageMemory); //Ëø¶¨ÄÚ´æ
+	//	void *pImageMemory=GlobalLock(hImageMemory); //é”å®šå†…å­˜
 	//	memcpy(pImageMemory, sttTwoIdInfo.arrTwoIdPhotoJpeg,sttTwoIdInfo.unTwoIdPhotoJpegLength);
- //       GlobalUnlock(hImageMemory); //½âËøÄÚ´æ
+ //       GlobalUnlock(hImageMemory); //è§£é”å†…å­˜
 
- //       OleLoadPicture(pIStream, 0, false, IID_IPicture,(LPVOID*)&(pIPicture));//ÓÃOleLoadPicture»ñµÃIPicture½Ó¿ÚÖ¸Õë
- //       //µÃµ½IPicture COM½Ó¿Ú¶ÔÏóºó£¬Äã¾Í¿ÉÒÔ½øĞĞ»ñµÃÍ¼Æ¬ĞÅÏ¢¡¢ÏÔÊ¾Í¼Æ¬µÈ²Ù×÷
+ //       OleLoadPicture(pIStream, 0, false, IID_IPicture,(LPVOID*)&(pIPicture));//ç”¨OleLoadPictureè·å¾—IPictureæ¥å£æŒ‡é’ˆ
+ //       //å¾—åˆ°IPicture COMæ¥å£å¯¹è±¡åï¼Œä½ å°±å¯ä»¥è¿›è¡Œè·å¾—å›¾ç‰‡ä¿¡æ¯ã€æ˜¾ç¤ºå›¾ç‰‡ç­‰æ“ä½œ
  //       OLE_XSIZE_HIMETRIC hmWidth;
  //       OLE_YSIZE_HIMETRIC hmHeight;
- //       pIPicture->get_Width(&hmWidth);//ÓÃ½Ó¿Ú·½·¨»ñµÃÍ¼Æ¬µÄ¿íºÍ¸ß
+ //       pIPicture->get_Width(&hmWidth);//ç”¨æ¥å£æ–¹æ³•è·å¾—å›¾ç‰‡çš„å®½å’Œé«˜
  //       pIPicture->get_Height(&hmHeight);
 	//	
-	//	pIPicture->Render(m_Image.GetWindowDC()->GetSafeHdc(),0,0,80,80,0,hmHeight,hmWidth,-hmHeight,NULL);//ÔÚÖ¸¶¨µÄDCÉÏ»æ³öÍ¼Æ¬
+	//	pIPicture->Render(m_Image.GetWindowDC()->GetSafeHdc(),0,0,80,80,0,hmHeight,hmWidth,-hmHeight,NULL);//åœ¨æŒ‡å®šçš„DCä¸Šç»˜å‡ºå›¾ç‰‡
 
-	//	GlobalFree(hImageMemory); //ÊÍ·ÅÈ«¾ÖÄÚ´æ
- //       pIStream->Release(); //ÊÍ·ÅpIStream
- //       pIPicture->Release(); //ÊÍ·ÅpIPicture
+	//	GlobalFree(hImageMemory); //é‡Šæ”¾å…¨å±€å†…å­˜
+ //       pIStream->Release(); //é‡Šæ”¾pIStream
+ //       pIPicture->Release(); //é‡Šæ”¾pIPicture
 	//}
 }
 void CLotusCardDemoDlg::OnBnClickedNtaggetversion()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
 	if(-1 != hLotusCard)
@@ -987,26 +987,26 @@ void CLotusCardDemoDlg::NtagGetVersion(int hLotusCard)
 	unsigned int unCyc = 0;
 	if(FALSE == bResult) return;
 	int nRequestType = RT_NOT_HALT;
-    //Ñ°¿¨
+    //å¯»å¡
     memset(&sttLotusCardParam, 0x00, sizeof(sttLotusCardParam));
     bResult = LotusCardRequest(hLotusCard,nRequestType, &sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardRequest Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardRequest æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("¿¨ĞÍ£ºnCardType 0x%.8x"), sttLotusCardParam.nCardType);
+	strLog.Format(_T("å¡å‹ï¼šnCardType 0x%.8x"), sttLotusCardParam.nCardType);
 	AddLog(strLog);
-	//·À³å×²
+	//é˜²å†²æ’
 	bResult = LotusCardAnticoll(hLotusCard,&sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardAnticoll Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardAnticoll æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("¿¨ºÅnCardNo %.2x%.2x%.2x%.2x%.2x%.2x%.2x"), 
+	strLog.Format(_T("å¡å·nCardNo %.2x%.2x%.2x%.2x%.2x%.2x%.2x"), 
 		sttLotusCardParam.arrCardNo[0],
 		sttLotusCardParam.arrCardNo[1],
 		sttLotusCardParam.arrCardNo[2],
@@ -1016,33 +1016,33 @@ void CLotusCardDemoDlg::NtagGetVersion(int hLotusCard)
 		sttLotusCardParam.arrCardNo[6]);
 	AddLog(strLog);
 
-	//»ñÈ¡°æ±¾ĞÅÏ¢
+	//è·å–ç‰ˆæœ¬ä¿¡æ¯
 	bResult = LotusCardNtagGetVersion(hLotusCard,arrVersion, sizeof(arrVersion));
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardNtagGetVersion Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardNtagGetVersion æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
 	switch( arrVersion[6])
 	{
 		case 0x0f:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG213"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG213"));
 			nPwdPageIndex = 43;
 			nAuth0PageIndex = 41;
 			break;
 		case 0x11:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG215"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG215"));
 			nPwdPageIndex = 133;
 			nAuth0PageIndex = 131;
 			break;
 		case 0x13:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG216"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG216"));
 			nPwdPageIndex = 229;
 			nAuth0PageIndex = 227;
 			break;
 		default:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºÎ´Öª"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šæœªçŸ¥"));
 			AddLog(strLog);
 			return;
 
@@ -1051,7 +1051,7 @@ void CLotusCardDemoDlg::NtagGetVersion(int hLotusCard)
 }
 void CLotusCardDemoDlg::OnBnClickedLockntag21x()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
 	if(-1 != hLotusCard)
@@ -1077,26 +1077,26 @@ void CLotusCardDemoDlg::LockNtag21x(int hLotusCard)
 	unsigned int unCyc = 0;
 	if(FALSE == bResult) return;
 	int nRequestType = RT_NOT_HALT;
-    //Ñ°¿¨
+    //å¯»å¡
     memset(&sttLotusCardParam, 0x00, sizeof(sttLotusCardParam));
     bResult = LotusCardRequest(hLotusCard,nRequestType, &sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardRequest Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardRequest æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("¿¨ĞÍ£ºnCardType 0x%.8x"), sttLotusCardParam.nCardType);
+	strLog.Format(_T("å¡å‹ï¼šnCardType 0x%.8x"), sttLotusCardParam.nCardType);
 	AddLog(strLog);
-	//·À³å×²
+	//é˜²å†²æ’
 	bResult = LotusCardAnticoll(hLotusCard,&sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardAnticoll Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardAnticoll æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("¿¨ºÅnCardNo %.2x%.2x%.2x%.2x%.2x%.2x%.2x"), 
+	strLog.Format(_T("å¡å·nCardNo %.2x%.2x%.2x%.2x%.2x%.2x%.2x"), 
 		sttLotusCardParam.arrCardNo[0],
 		sttLotusCardParam.arrCardNo[1],
 		sttLotusCardParam.arrCardNo[2],
@@ -1106,77 +1106,77 @@ void CLotusCardDemoDlg::LockNtag21x(int hLotusCard)
 		sttLotusCardParam.arrCardNo[6]);
 	AddLog(strLog);
 
-	//»ñÈ¡°æ±¾ĞÅÏ¢
+	//è·å–ç‰ˆæœ¬ä¿¡æ¯
 	bResult = LotusCardNtagGetVersion(hLotusCard,arrVersion, sizeof(arrVersion));
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardNtagGetVersion Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardNtagGetVersion æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
 	switch( arrVersion[6])
 	{
 		case 0x0f:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG213"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG213"));
 			nPwdPageIndex = 43;
 			nAuth0PageIndex = 41;
 			break;
 		case 0x11:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG215"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG215"));
 			nPwdPageIndex = 133;
 			nAuth0PageIndex = 131;
 			break;
 		case 0x13:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG216"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG216"));
 			nPwdPageIndex = 229;
 			nAuth0PageIndex = 227;
 			break;
 		default:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºÎ´Öª"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šæœªçŸ¥"));
 			AddLog(strLog);
 			return;
 
 	}
 	AddLog(strLog);
-	//ÉèÖÃÃÜÂë
+	//è®¾ç½®å¯†ç 
 	sttLotusCardParam.arrBuffer[0] = 0x31;
 	sttLotusCardParam.arrBuffer[1] = 0x32;
 	sttLotusCardParam.arrBuffer[2] = 0x33;
 	sttLotusCardParam.arrBuffer[3] = 0x34;
 	sttLotusCardParam.nBufferSize=16;
-    //Ã¿´ÎĞ´Èë4×Ö½Ú
+    //æ¯æ¬¡å†™å…¥4å­—èŠ‚
 	bResult = LotusCardWrite(hLotusCard,nPwdPageIndex, &sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("µ÷ÓÃ LotusCardWrite Ğ´ÈëPAGE %d Ê§°Ü!"), nPwdPageIndex);
+        strLog.Format(_T("è°ƒç”¨ LotusCardWrite å†™å…¥PAGE %d å¤±è´¥!"), nPwdPageIndex);
         AddLog(strLog);
 		return;
 	}
-    strLog.Format(_T("µ÷ÓÃ LotusCardWrite Ğ´ÈëPAGE %d ³É¹¦!"), nPwdPageIndex);
+    strLog.Format(_T("è°ƒç”¨ LotusCardWrite å†™å…¥PAGE %d æˆåŠŸ!"), nPwdPageIndex);
     AddLog(strLog);
 
-	//ÉèÖÃ¼ÓÃÜÉúĞ§Î»
+	//è®¾ç½®åŠ å¯†ç”Ÿæ•ˆä½
 	sttLotusCardParam.arrBuffer[0] = 0x04;
 	sttLotusCardParam.arrBuffer[1] = 0x00;
 	sttLotusCardParam.arrBuffer[2] = 0x00;
 	sttLotusCardParam.arrBuffer[3] = 0x04;
 	sttLotusCardParam.nBufferSize =16;
-    //Ã¿´ÎĞ´Èë4×Ö½Ú
+    //æ¯æ¬¡å†™å…¥4å­—èŠ‚
 	bResult = LotusCardWrite(hLotusCard,nAuth0PageIndex, &sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("µ÷ÓÃ LotusCardWrite Ğ´ÈëPAGE %d Ê§°Ü!"), nAuth0PageIndex);
+        strLog.Format(_T("è°ƒç”¨ LotusCardWrite å†™å…¥PAGE %d å¤±è´¥!"), nAuth0PageIndex);
         AddLog(strLog);
 		return;
 	}
-    strLog.Format(_T("µ÷ÓÃ LotusCardWrite Ğ´ÈëPAGE %d ³É¹¦!"), nAuth0PageIndex);
+    strLog.Format(_T("è°ƒç”¨ LotusCardWrite å†™å…¥PAGE %d æˆåŠŸ!"), nAuth0PageIndex);
     AddLog(strLog);
 
 }
 
 void CLotusCardDemoDlg::OnBnClickedUnlockntag21x()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
 	if(-1 != hLotusCard)
@@ -1203,26 +1203,26 @@ void CLotusCardDemoDlg::UnLockNtag21x(int hLotusCard)
 	unsigned int unCyc = 0;
 	if(FALSE == bResult) return;
 	int nRequestType = RT_NOT_HALT;
-    //Ñ°¿¨
+    //å¯»å¡
     memset(&sttLotusCardParam, 0x00, sizeof(sttLotusCardParam));
     bResult = LotusCardRequest(hLotusCard,nRequestType, &sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardRequest Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardRequest æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("¿¨ĞÍ£ºnCardType 0x%.8x"), sttLotusCardParam.nCardType);
+	strLog.Format(_T("å¡å‹ï¼šnCardType 0x%.8x"), sttLotusCardParam.nCardType);
 	AddLog(strLog);
-	//·À³å×²
+	//é˜²å†²æ’
 	bResult = LotusCardAnticoll(hLotusCard,&sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardAnticoll Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardAnticoll æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("¿¨ºÅnCardNo %.2x%.2x%.2x%.2x%.2x%.2x%.2x"), 
+	strLog.Format(_T("å¡å·nCardNo %.2x%.2x%.2x%.2x%.2x%.2x%.2x"), 
 		sttLotusCardParam.arrCardNo[0],
 		sttLotusCardParam.arrCardNo[1],
 		sttLotusCardParam.arrCardNo[2],
@@ -1232,70 +1232,70 @@ void CLotusCardDemoDlg::UnLockNtag21x(int hLotusCard)
 		sttLotusCardParam.arrCardNo[6]);
 	AddLog(strLog);
 
-	//»ñÈ¡°æ±¾ĞÅÏ¢
+	//è·å–ç‰ˆæœ¬ä¿¡æ¯
 	bResult = LotusCardNtagGetVersion(hLotusCard,arrVersion, sizeof(arrVersion));
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("LotusCardNtagGetVersion Ö´ĞĞÊ§°Ü"));
+        strLog.Format(_T("LotusCardNtagGetVersion æ‰§è¡Œå¤±è´¥"));
         AddLog(strLog);
 		return;
 	}
 	switch( arrVersion[6])
 	{
 		case 0x0f:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG213"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG213"));
 			nPwdPageIndex = 43;
 			nAuth0PageIndex = 41;
 			break;
 		case 0x11:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG215"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG215"));
 			nPwdPageIndex = 133;
 			nAuth0PageIndex = 131;
 			break;
 		case 0x13:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºNTAG216"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šNTAG216"));
 			nPwdPageIndex = 229;
 			nAuth0PageIndex = 227;
 			break;
 		default:
-			strLog.Format(_T("¿¨Æ¬ĞÍºÅ£ºÎ´Öª"));
+			strLog.Format(_T("å¡ç‰‡å‹å·ï¼šæœªçŸ¥"));
 			AddLog(strLog);
 			return;
 
 	}
 	AddLog(strLog);
-	//ÉèÖÃÃÜÂë
+	//è®¾ç½®å¯†ç 
 	sttLotusCardParam.arrBuffer[0] = 0x31;
 	sttLotusCardParam.arrBuffer[1] = 0x32;
 	sttLotusCardParam.arrBuffer[2] = 0x33;
 	sttLotusCardParam.arrBuffer[3] = 0x34;
 	sttLotusCardParam.nBufferSize=16;
-    //ÑéÖ¤ÃÜÂë
+    //éªŒè¯å¯†ç 
 	bResult = LotusCardNtagPwdAuth(hLotusCard,sttLotusCardParam.arrBuffer, 4);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("µ÷ÓÃ LotusCardNtagPwdAuth PAGE %d Ê§°Ü!"), nPwdPageIndex);
+        strLog.Format(_T("è°ƒç”¨ LotusCardNtagPwdAuth PAGE %d å¤±è´¥!"), nPwdPageIndex);
         AddLog(strLog);
 		return;
 	}
-    strLog.Format(_T("µ÷ÓÃ LotusCardNtagPwdAuth PAGE %d ³É¹¦!"), nPwdPageIndex);
+    strLog.Format(_T("è°ƒç”¨ LotusCardNtagPwdAuth PAGE %d æˆåŠŸ!"), nPwdPageIndex);
     AddLog(strLog);
 
-	//ÉèÖÃ¼ÓÃÜÉúĞ§Î»Ê§Ğ§
+	//è®¾ç½®åŠ å¯†ç”Ÿæ•ˆä½å¤±æ•ˆ
 	sttLotusCardParam.arrBuffer[0] = 0x04;
 	sttLotusCardParam.arrBuffer[1] = 0x00;
 	sttLotusCardParam.arrBuffer[2] = 0x00;
 	sttLotusCardParam.arrBuffer[3] = 0xff;
 	sttLotusCardParam.nBufferSize =16;
-    //Ã¿´ÎĞ´Èë4×Ö½Ú
+    //æ¯æ¬¡å†™å…¥4å­—èŠ‚
 	bResult = LotusCardWrite(hLotusCard,nAuth0PageIndex, &sttLotusCardParam);
     if(FALSE == bResult) 
 	{
-        strLog.Format(_T("µ÷ÓÃ LotusCardWrite Ğ´ÈëPAGE %d Ê§°Ü!"), nAuth0PageIndex);
+        strLog.Format(_T("è°ƒç”¨ LotusCardWrite å†™å…¥PAGE %d å¤±è´¥!"), nAuth0PageIndex);
         AddLog(strLog);
 		return;
 	}
-    strLog.Format(_T("µ÷ÓÃ LotusCardWrite Ğ´ÈëPAGE %d ³É¹¦!"), nAuth0PageIndex);
+    strLog.Format(_T("è°ƒç”¨ LotusCardWrite å†™å…¥PAGE %d æˆåŠŸ!"), nAuth0PageIndex);
     AddLog(strLog);
 
 }
@@ -1303,7 +1303,7 @@ void CLotusCardDemoDlg::SetIdCommandIndex()
 {
 	CString strTmp = _T("");
 	m_unIdCommandIndex++;
-	strTmp.Format(_T("Ö¸ÁîË÷Òı£º%d"), m_unIdCommandIndex);
+	strTmp.Format(_T("æŒ‡ä»¤ç´¢å¼•ï¼š%d"), m_unIdCommandIndex);
 	m_IdCommandIndex.SetWindowText(strTmp);
 
 }
@@ -1315,7 +1315,7 @@ void CLotusCardDemoDlg::SetButton2English(void)
 
 void CLotusCardDemoDlg::OnBnClicked7816test()
 {
-	// TODO: ÔÚ´ËÌí¼Ó¿Ø¼şÍ¨Öª´¦Àí³ÌĞò´úÂë
+	// TODO: åœ¨æ­¤æ·»åŠ æ§ä»¶é€šçŸ¥å¤„ç†ç¨‹åºä»£ç 
 	int  hLotusCard = LotusCardOpenDevice("",0,0,0,0,NULL);
 
 	if(-1 != hLotusCard)
@@ -1342,75 +1342,75 @@ void CLotusCardDemoDlg::Test7816(int hLotusCard)
 	bResult = LotusCardBeep(hLotusCard,10);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardBeep Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardBeep æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
 	
-	//Ñ¡Ôñ¿¨×ù
-    bResult = LotusCardSetSamSlotIndex(hLotusCard, 0);//0ÊÇÍâÖÃ¿¨×ù 1 2ÊÇÄÚÖÃ¿¨×ù 3ÊÇÀ©Õ¹ÍâÖÃ¿¨×ù
+	//é€‰æ‹©å¡åº§
+    bResult = LotusCardSetSamSlotIndex(hLotusCard, 0);//0æ˜¯å¤–ç½®å¡åº§ 1 2æ˜¯å†…ç½®å¡åº§ 3æ˜¯æ‰©å±•å¤–ç½®å¡åº§
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetSamSlotIndex Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetSamSlotIndex æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardSetSamSlotIndex Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardSetSamSlotIndex æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
 
-	//ÉèÖÃµçÑ¹
-	// 3.3V Sel0 = 1 Sel1 = 0£¬
-	// 1.8V Sel0 = 1 Sel1 = 1£¬
-	//   5V Sel0 = 0 Sel1 = 1£¬
+	//è®¾ç½®ç”µå‹
+	// 3.3V Sel0 = 1 Sel1 = 0ï¼Œ
+	// 1.8V Sel0 = 1 Sel1 = 1ï¼Œ
+	//   5V Sel0 = 0 Sel1 = 1ï¼Œ
     bResult = LotusCardSetSamVSel0(hLotusCard, 0, 1);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetSamVSel0 Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetSamVSel0 æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardSetSamVSel0 Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardSetSamVSel0 æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
 
     bResult = LotusCardSetSamVSel1(hLotusCard, 0, 0);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetSamVSel1 Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetSamVSel1 æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardSetSamVSel1 Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardSetSamVSel1 æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
-    AddLog(_T("µ÷ÓÃµçÑ¹ÉèÖÃ³É¹¦!"));
+    AddLog(_T("è°ƒç”¨ç”µå‹è®¾ç½®æˆåŠŸ!"));
 
     bResult = LotusCardSetSamPowerOnOff(hLotusCard, 0);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetSamPowerOnOff ÏÂµç Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetSamPowerOnOff ä¸‹ç”µ æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardSetSamPowerOnOff ÏÂµç Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardSetSamPowerOnOff ä¸‹ç”µ æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
 	Sleep(20);      
 	bResult = LotusCardSetSamPowerOnOff(hLotusCard, 1);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSetSamPowerOnOff ÉÏµç Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSetSamPowerOnOff ä¸Šç”µ æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardSetSamPowerOnOff ÉÏµç Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardSetSamPowerOnOff ä¸Šç”µ æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
 
     bResult = LotusCardResetSam(hLotusCard, &sttLotusCardParam);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardResetSam Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardResetSam æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardResetSam Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardResetSam æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
 
 
@@ -1421,7 +1421,7 @@ void CLotusCardDemoDlg::Test7816(int hLotusCard)
 	strLog.Format(_T("ATS:%s"), szATS);
 	AddLog(strLog);
 
-	//Ö´ĞĞÈ¡Ëæ»úÊı¶¯×÷ 0084000004
+	//æ‰§è¡Œå–éšæœºæ•°åŠ¨ä½œ 0084000004
     sttLotusCardParam.arrCosSendBuffer[0] = 0x00;
 	sttLotusCardParam.arrCosSendBuffer[1] = 0x84;
 	sttLotusCardParam.arrCosSendBuffer[2] = 0x00;
@@ -1433,18 +1433,18 @@ void CLotusCardDemoDlg::Test7816(int hLotusCard)
     bResult = LotusCardSendSamAPDU(hLotusCard, &sttLotusCardParam);
 	if(FALSE == bResult) 
 	{
-		strLog.Format(_T("LotusCardSendSamAPDU Ö´ĞĞÊ§°Ü"));
+		strLog.Format(_T("LotusCardSendSamAPDU æ‰§è¡Œå¤±è´¥"));
 		AddLog(strLog);
 		return;
 	}
-	strLog.Format(_T("LotusCardSendSamAPDU Ö´ĞĞ³É¹¦"));
+	strLog.Format(_T("LotusCardSendSamAPDU æ‰§è¡ŒæˆåŠŸ"));
 	AddLog(strLog);
 
 	for(int i = 0; i < sttLotusCardParam.unCosReultBufferLength; i++)
 	{
 		sprintf(szATS + (i*2), "%02x", sttLotusCardParam.arrCosResultBuffer[(i)]);
 	}
-	strLog.Format(_T("Ëæ»úÊı:%s"), szATS);
+	strLog.Format(_T("éšæœºæ•°:%s"), szATS);
 	AddLog(strLog);
 
 }
